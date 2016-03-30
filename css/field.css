@@ -1,0 +1,316 @@
+html {
+    transition: background 2666ms linear;
+    background: #f0f0f0 url("../img/noise.gif") repeat -70% 0;
+}
+
+html, body {
+    margin: 0px;
+    font-family: "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;
+    color: #383233;
+}
+
+a {
+    color: #383233;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.center {
+    margin: 20px auto;
+    width: 396px;
+    position: relative;
+}
+
+.fieldWrapper {
+    position: relative;
+
+}
+
+.gameField {
+    border: 1px solid gainsboro;
+
+    /*width: 350px;*/
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-color: whitesmoke;
+    height: 364px;
+}
+
+.gameField .onBoardMessage {
+    top: 51px;
+    left: 12px;
+    position: absolute;
+    font-size: 26px;
+    font-family: "Tiempos Headline",Tiempos,Georgia,serif;
+
+    color: #424242;
+    width: 370px;
+    text-align: center;
+    background-color: #fcca30;
+    border: 1px solid;
+    border-radius: 2px;
+    z-index: 10;
+    box-shadow: 0px 3px 4px rgba(0,0,0,0.5);
+}
+
+.gameField .onBoardMessage.onBoardMessage__gameOver {
+    background: #F04B56;
+    color: whiteSmoke;
+    top: 100px;
+}
+
+.share-button {
+    display: inline-block;
+}
+
+.gameOver, .gameOverComplete {
+    position: absolute;
+    top: 270px;
+    padding: 15px 0px;
+    background: white;
+    opacity: 0.9;
+    font-size: 18px;
+    left: 87px;
+    width: 415px;
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 3px;
+
+}
+
+.gameOverComplete {
+
+}
+
+.startNextLevel {
+    color: green;
+    cursor: pointer;
+}
+
+.startNextLevel:hover {
+    text-decoration: underline;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.nextDigit.cell {
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.gameField .cell {
+    border: 1px solid gainsboro;
+    display: table-cell;
+    background-color: #383233;
+    transition: background-color 0.3s linear;
+}
+
+.gameField .cell.activeCell {
+    background-color: #969696;
+}
+
+.cell .cell-content {
+    width: inherit;
+    height: inherit;
+}
+
+.nextDigit .cell-content {
+    position: absolute;
+    z-index: 100;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #222;
+    font-size: 34px;
+}
+
+.nextDigit .cell-content.numberCircle {
+    width: 50px;
+}
+
+
+.cell .droppedScore {
+    opacity: 1;
+    z-index:3;
+    position:absolute;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+.scores {
+    float: right;
+}
+
+.level {
+    margin-right: 9px;
+}
+
+.level .currentLevel {
+    cursor: pointer;
+    padding-bottom: 3px;
+
+    position: relative;
+
+}
+
+.level .currentLevel:hover .allLevels{
+    visibility: visible;
+}
+
+.level .allLevels {
+    position: absolute;
+    top: 25px;
+    background: #333;
+    color: white;
+    z-index: 100;
+    width: 130px;
+    text-align: center;
+    border: 1px solid white;
+    box-shadow: 4px 2px 5px rgba(0,0,0,0.2);
+    visibility: hidden;
+}
+
+.level .allLevels ul {
+    list-style: none;
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+}
+
+.level .allLevels ul li {
+    padding: 2px;
+    font-weight: normal;
+    position: relative;
+}
+
+
+.level .allLevels ul li:not(.disabled) {
+    cursor: pointer;
+}
+
+.level .allLevels ul li.disabled {
+    color: gray;
+}
+
+.level .allLevels ul li.current {
+
+}
+
+.level .allLevels ul li.current:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background: white;
+    border: 1px solid white;
+    background-size: 5px;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+}
+
+.level .allLevels ul li:hover:not(.disabled) {
+    background: #F04B56;
+}
+
+.score {
+
+}
+
+.scoreSum {
+    font-size: 34px;
+    text-align: center;
+}
+
+.turnsIndicator {
+
+}
+
+.turnsIndicator .smallTurn {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.turnsIndicator .smallTurn.wasted {
+    background: #d6cacc;
+}
+
+.level, .time {
+    display: inline-block;
+}
+
+.levelNumber {
+    display: inline-block;
+    margin-left: -5px;
+    text-align: center;
+}
+
+.intro {
+    float: left;
+    line-height: 34px;
+    margin-bottom: 0;
+}
+
+.above-game {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    height: 70px;
+}
+
+.above-game:after, .header:after  {
+    content: "";
+    display: block;
+    clear: both;
+    margin: -20px;
+}
+
+.restart-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: #F04B56;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.restart-button:active {
+    background: #BB434B;
+}
+
+.howToPlay {
+    margin-top: 35px;
+}

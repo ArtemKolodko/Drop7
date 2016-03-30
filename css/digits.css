@@ -1,0 +1,41 @@
+.numberCircle {
+    background: url(../img/drop7sprite.png) 0 0;
+    background-size: 243px;
+}
+
+.numberCircle_1 {
+    background-position-x: -2px;
+ }
+
+.numberCircle_2 {
+    background-position: -51px 0px;
+}
+
+.numberCircle_3 {
+    background-position: -103px 0px;
+}
+
+.numberCircle_4 {
+    background-position: -154px -1px;
+}
+
+.numberCircle_5 {
+    background-position: -1px -52px;
+}
+
+.numberCircle_6 {
+    background-position: -52px -52px;
+}
+
+.numberCircle_7 {
+     background-position: -103px -52px;
+}
+
+.numberCircle_hidden_1 {
+    background-position: -103px -103px;
+}
+
+.numberCircle_hidden_2 {
+    background-position: -52px -103px;
+}
+

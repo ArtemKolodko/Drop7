@@ -1,0 +1,33 @@
+
+
+.animationWrapper {
+
+}
+
+.animationWrapper .risingPoint {
+
+    -webkit-animation-name: risePointsAnimation;
+    animation-name: risePointsAnimation;
+    animation-duration: 1.2s;
+    font-size: 28px;
+    font-weight: bold;
+    top: -20px;
+}
+
+@keyframes risePointsAnimation {
+    from {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+        font-size: 20px;
+        color: #ffff00;
+    }
+
+
+    to {
+        transform: translate(0px, -40px);
+        opacity: 0;
+    }
+}

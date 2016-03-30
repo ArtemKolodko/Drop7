@@ -1,0 +1,121 @@
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}
+
+@cellWidth : 52;
+@borderWidth : 17;
+
+
+.mixin(@leftNum, @topNum, @name: anim_@leftNum_@topNum, @left: (@leftNum - 3)*@cellWidth, @top: @topNum*@cellWidth+@cellWidth + @borderWidth){
+
+  @keyframes  @name {
+    10%, 80%, 90%, to {
+    animation-timing-function: cubic-bezier(0.115, 0.610, 0.855, 1.000);
+  }
+
+  10% {
+    transform: translate3d(@left + 0px, 0px, 0px);
+  }
+
+  80% {
+    transform: translate3d(@left + 0px, @top + 15px, 0) scale(1, 0.75);
+  }
+
+  90% {
+    transform: translate3d(@left + 0px, @top - 5px, 0) scale(1.1, 1);
+  }
+
+  95% {
+    transform: translate3d(@left + 0px, @top + 5px, 0) scale(1, 0.85);
+  }
+
+  to {
+    transform: translate3d(@left + 0px, @top + 0px, 0) scale(1, 1);
+  }
+}
+}
+
+.mixinInField(@leftNum, @topNum, @name: anim_in_field_@leftNum_@topNum, @left: 0, @top: @topNum*@cellWidth+@cellWidth){
+
+  @keyframes  @name {
+    80%, 90%, 95%, to {
+      animation-timing-function: cubic-bezier(0.610, 0,755,  0.855, 1.000);
+    }
+
+    80% {
+      transform: translate3d(@left + 0px, @top + 10px, 0) scale(1, 0.9);
+    }
+
+    90% {
+      transform: translate3d(@left + 0px, @top - 5px, 0) scale(1.05, 1);
+    }
+
+    95% {
+      transform: translate3d(@left + 0px, @top + 5px, 0) scale(1, 0.95);
+    }
+
+    to {
+      transform: translate3d(@left + 0px, @top + 0px, 0) scale(1, 1);
+    }
+  }
+}
+
+
+
+.generate-columns(6);
+
+.generate-columns(@n, @i:0) when (@i =< @n) {
+
+  @row: 6 - @i;
+
+
+  .top_down.top_down_0_@{row} {
+    .mixin(0, @row, ~'anim_0_@{row}');
+    .animation(~'anim_0_@{row}');
+  }
+
+  .top_down.top_down_1_@{row} {
+    .mixin(1, @row, ~'anim_1_@{row}');
+    .animation(~'anim_1_@{row}');
+  }
+
+  .top_down.top_down_2_@{row} {
+    .mixin(2, @row, ~'anim_2_@{row}');
+    .animation(~'anim_2_@{row}');
+  }
+
+  .top_down.top_down_3_@{row} {
+    .mixin(3, @row, ~'anim_3_@{row}');
+    .animation(~'anim_3_@{row}');
+  }
+
+  .top_down.top_down_4_@{row} {
+    .mixin(4, @row, ~'anim_4_@{row}');
+    .animation(~'anim_4_@{row}');
+  }
+
+  .top_down.top_down_5_@{row} {
+    .mixin(5, @row, ~'anim_5_@{row}');
+    .animation(~'anim_5_@{row}');
+  }
+
+  .top_down.top_down_6_@{row} {
+    .mixin(6, @row, ~'anim_6_@{row}');
+    .animation(~'anim_6_@{row}');
+  }
+
+
+  .in_field_down.in_field_down_@{row} {
+    .mixinInField(0, @row, ~'anim_in_field_@{row}');
+    .animation(~'anim_in_field_@{row}');
+  }
+
+  .generate-columns(@n, (@i + 1));
+}
+
+
+
+
+
