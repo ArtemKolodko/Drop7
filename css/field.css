@@ -5,7 +5,8 @@ html {
 
 html, body {
     margin: 0px;
-    font-family: "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;
+    /*font-family: "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;*/
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
     color: #383233;
 }
 
@@ -282,6 +283,10 @@ a {
     user-select: none;
     position: relative;
     height: 70px;
+}
+
+.header {
+    height: 45px;
 }
 
 .above-game:after, .header:after  {

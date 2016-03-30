@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
     };
 
-    app.startVariants = ['0|2_0|7_0|5_2|6_3|3_3|7_5|4_6|6_6|4_n|5']; // _+5
+    app.startVariants = ['0|2|2_0|7_0|5_2|6_3|3_3|7|2_5|4_6|6_6|4_n|5']; // _+5
 
     var startPlacement = localStorage.getItem('last_game') || app.startVariants[0];
 
@@ -761,10 +761,6 @@ GameView.prototype.bindActions = function() {
             //$('.gameField .cell[data-y="'+$(this).attr('data-y')+'"]').addClass('activeCellSmall');
         }
     });
-
-    $(document).on('mouseout', '.gameField .cell', function() {
-        //$('.activeCellSmall').removeClass('activeCellSmall');
-    });
 };
 
 GameView.prototype.pushDigit = function(digit, fromUser, callback) {
@@ -798,13 +794,6 @@ GameView.prototype.pushDigit = function(digit, fromUser, callback) {
             .html(digit.view())
             .find('.cell-content')
             .animateCss('bounceInDown')
-
-        /*
-        $('.cell[data-x='+digit.r+'][data-y='+digit.c+'] .cell-content')
-            .addClass('numberCircle numberCircle_'+digit.value)
-            .attr('data-digit', digit.value)
-            .animateCss('bounceInDown');
-            */
     }
 };
 
@@ -895,8 +884,6 @@ GameView.prototype.digitAction = function(name, data) {
                 e.remove();
             });
 
-            //$('<div class="droppedScore">+'+data.digitScore+'</div>').insertAfter($target);
-            //$target.html('<div class="droppedScore">+'+data.digitScore+'</div>');
             $target.animateCss('zoomIn', function(e) {
                 e.parent().html(self.emptyContent);
             });
@@ -919,13 +906,6 @@ GameView.prototype.digitAction = function(name, data) {
                 e.clone().appendTo($target); // bounceInDown in_field_down
                 e.parent().html(self.emptyContent);
             }, data);
-            /*
-            var $source = $('.cell[data-x='+data.old.r+'][data-y='+data.old.c+'] .cell-content');
-            var $target = $('.cell[data-x='+data.new.r+'][data-y='+data.new.c+']');
-            $target.empty();
-            $source.clone().appendTo( $target).animateCss('bounceInDown');
-            $source.parent().html(this.emptyContent);
-            */
 
             break;
         default: break;

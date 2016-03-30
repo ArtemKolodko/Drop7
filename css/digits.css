@@ -12,7 +12,7 @@
 }
 
 .numberCircle_3 {
-    background-position: -103px 0px;
+    background-position: -103px -1px;
 }
 
 .numberCircle_4 {
@@ -32,10 +32,10 @@
 }
 
 .numberCircle_hidden_1 {
-    background-position: -103px -103px;
+    background-position: -103px -102px;
 }
 
 .numberCircle_hidden_2 {
-    background-position: -52px -103px;
+    background-position: -52px -102px;
 }
 

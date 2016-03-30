@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
     };
 
-    app.startVariants = ['0|2_0|7_0|5_2|6_3|3_3|7_5|4_6|6_6|4_n|5']; // _+5
+    app.startVariants = ['0|2|2_0|7_0|5_2|6_3|3_3|7|2_5|4_6|6_6|4_n|5']; // _+5
 
     var startPlacement = localStorage.getItem('last_game') || app.startVariants[0];
 
